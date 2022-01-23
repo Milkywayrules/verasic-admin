@@ -1,4 +1,3 @@
-import React from 'react'
 import { AnnotationIcon } from '@heroicons/react/outline'
 
 const App = () => {
