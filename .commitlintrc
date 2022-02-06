@@ -16,7 +16,9 @@
         "style",
         "test",
         "deps",
-        "cnfg"
+        "cnfg",
+        "add",
+        "upd"
       ]
     ]
   }

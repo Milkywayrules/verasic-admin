@@ -65,6 +65,16 @@
       "description": "Changes on config file",
       "title": "Config Changes",
       "emoji": "🔧"
+    },
+    "add": {
+      "description": "Add something that others type not handle it",
+      "title": "Add Something",
+      "emoji": "➕"
+    },
+    "upd": {
+      "description": "Update something that others type not handle it",
+      "title": "Update Something",
+      "emoji": "🏑"
     }
   }
 }
