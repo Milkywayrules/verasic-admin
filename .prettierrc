@@ -8,5 +8,7 @@
   "arrowParens": "avoid",
   "printWidth": 100,
   "tabWidth": 2,
-  "bracketSameLine": false
+  "bracketSameLine": false,
+  "endOfLine": "lf",
+  "jsxSingleQuote": false
 }
