@@ -11,7 +11,7 @@ const SlimSidebarList = ({ icon, title, to = '#' }: Props) => (
     <Link
       to={to}
       title={title}
-      className="flex justify-center p-1 rounded-full hover:bg-blue-500/50 active:bg-blue-500/25"
+      className="flex justify-center rounded-full p-1 hover:bg-blue-500/50 active:bg-blue-500/25"
     >
       {icon}
     </Link>

@@ -18,7 +18,7 @@ const topItem = [
     <SlimSidebarList
       to="/"
       title="Dashboard home"
-      icon={<img src="/logo192.png" alt="logo" className="w-8 h-8" />}
+      icon={<img src="/logo192.png" alt="logo" className="h-8 w-8" />}
     />
   </div>,
   <SlimSidebarList to="search" title="Search" icon={<SearchIcon {...iconProps} />} />,
@@ -35,14 +35,14 @@ const bottomItem = [
 
 const DashboardBitbucketLayout = () => {
   return (
-    <div className="flex w-full min-h-screen text-white bg-white">
+    <div className="flex min-h-screen w-full bg-white text-white">
       <SlimSidebar topItem={topItem} bottomItem={bottomItem} />
 
-      <div className="flex flex-col items-start justify-between p-5 w-60 bg-slate-800 shrink-0 grow-0">
+      <div className="flex w-60 shrink-0 grow-0 flex-col items-start justify-between bg-slate-800 p-5">
         sidebar 2
       </div>
 
-      <div className="w-full p-5 bg-slate-700">
+      <div className="w-full bg-slate-700 p-5">
         <Outlet />
       </div>
     </div>
