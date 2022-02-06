@@ -13,5 +13,5 @@ export const useTitle = (title: string, override: boolean = false): void => {
     return () => {
       document.title = override ? title : `${title} | ${process.env.REACT_APP_SITE_TITLE}`
     }
-  }, [])
+  }, [title, override])
 }
