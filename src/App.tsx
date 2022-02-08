@@ -1,9 +1,12 @@
 import { Outlet, Route, Routes } from 'react-router-dom'
+import RightFloatingOption from './components/organisms/RightFloatingOption'
 import DashboardBitbucketLayout from './components/layouts/DashboardBitbucketLayout'
 
 const App = () => {
   return (
     <>
+      <RightFloatingOption />
+
       <Routes>
         <Route path="/" element={<DashboardBitbucketLayout />}>
           <Route index element={<Home />} />
