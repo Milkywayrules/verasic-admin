@@ -2,11 +2,11 @@ import { Link, To } from 'react-router-dom'
 
 interface Props {
   icon: JSX.Element
-  title?: string
+  title: string
   to?: To
 }
 
-const SlimSidebarList = ({ icon, title, to = '#' }: Props) => (
+const SlimSidebarItem = ({ icon, title, to = '#' }: Props) => (
   <li>
     <Link
       to={to}
@@ -18,4 +18,4 @@ const SlimSidebarList = ({ icon, title, to = '#' }: Props) => (
   </li>
 )
 
-export default SlimSidebarList
+export default SlimSidebarItem

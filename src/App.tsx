@@ -1,6 +1,6 @@
 import { Outlet, Route, Routes } from 'react-router-dom'
 import RightFloatingOption from './components/organisms/RightFloatingOption'
-import DashboardBitbucketLayout from './components/layouts/DashboardBitbucketLayout'
+import DashboardBitbucketLayout from './components/templates/DashboardBitbucketLayout'
 
 const App = () => {
   return (
