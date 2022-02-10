@@ -1,5 +1,5 @@
 import { SVGProps } from 'react'
-import { capsEveryFirstLetter, capsFirstLetter } from './textUtils'
+import { capsFirstLetter } from './textUtils'
 
 export type iconFn = (props: SVGProps<SVGSVGElement>) => JSX.Element
 
