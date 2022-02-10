@@ -37,7 +37,7 @@ const NavLinkOrButton: FC<NavLinkOrButtonProps> = ({ id, to, className, children
     'w-full flex items-center gap-[18px] rounded border-2 border-transparent py-1.5 px-3 outline-none hover:bg-gray-200 focus-visible:border-blue-500 active:border-transparent active:bg-blue-100 active:text-blue-700'
 
   const location = useLocation()
-  const [idForBtn, _, isMatchBtnWithFirstSegment] = prepUtils(to, location)
+  const [idForBtn, , isMatchBtnWithFirstSegment] = prepUtils(to, location)
 
   let [isIconShow, setIsIconShow] = useState(!isMatchBtnWithFirstSegment)
 
