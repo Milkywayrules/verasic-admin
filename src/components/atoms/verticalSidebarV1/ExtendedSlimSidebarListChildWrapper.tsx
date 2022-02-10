@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useSidebarMenuStore } from 'src/store/sidebarMenuStore'
 
@@ -18,9 +18,17 @@ const ExtendedSlimSidebarListChildWrapper = <T extends { to: string }>({
 }: Props<T>) => {
   const location = useLocation()
 
+  const addElement = useSidebarMenuStore(state => state.addElementToObj)
+  const objOfElement = useSidebarMenuStore(state => state.objOfElement)
+  const setElementValue = useSidebarMenuStore(state => state.setElementValue)
+
+  const [objOfElementWithID] = useState(objOfElement[id])
+
+  const ulRef = useRef<HTMLUListElement>(null)
+
   // TODO; maybe should rework this piece of sh*t
-  let URLFirstSegment = ''
-  let URLFirstSegmentOnFirstChild = ''
+  let [URLFirstSegment] = useState('')
+  let [URLFirstSegmentOnFirstChild] = useState('')
 
   // TODO; maybe should rework this piece of sh*t
   if ('to' in items[0]) {
@@ -29,32 +37,28 @@ const ExtendedSlimSidebarListChildWrapper = <T extends { to: string }>({
     URLFirstSegmentOnFirstChild = items[0].to.split('/', 2)[1]
   }
 
-  const addElement = useSidebarMenuStore(state => state.addElementToObj)
-  const objOfElement = useSidebarMenuStore(state => state.objOfElement)
-  const setElementValue = useSidebarMenuStore(state => state.setElementValue)
-
-  const ulRef = useRef<HTMLUListElement>(null)
-
   // what should we do on first render
   useEffect(() => {
     addElement(id, URLFirstSegment === URLFirstSegmentOnFirstChild)
+    // eslint-disable-next-line
   }, [])
 
   // what should we do when changing route
   useEffect(() => {
     URLFirstSegment !== URLFirstSegmentOnFirstChild && setElementValue(id, false)
-  }, [URLFirstSegment])
+    // eslint-disable-next-line
+  }, [URLFirstSegment, URLFirstSegmentOnFirstChild])
 
   // what should we do when the state of objOfElement changes
   useEffect(() => {
-    if (objOfElement[id]) {
+    if (objOfElementWithID) {
       ulRef.current?.classList.add('flex')
       ulRef.current?.classList.remove('hidden')
     } else {
       ulRef.current?.classList.add('hidden')
       ulRef.current?.classList.remove('flex')
     }
-  }, [objOfElement[id]])
+  }, [objOfElementWithID])
 
   return (
     <ul ref={ulRef} className={'flex flex-col rounded-b bg-gray-300 py-2 shadow-inner'}>
