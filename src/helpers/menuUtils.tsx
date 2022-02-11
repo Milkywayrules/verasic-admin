@@ -1,4 +1,5 @@
 import { SVGProps } from 'react'
+import { useLocation } from 'react-router-dom'
 import { capsFirstLetter } from './textUtils'
 
 export type iconFn = (props: SVGProps<SVGSVGElement>) => JSX.Element
@@ -51,4 +52,20 @@ export const MenuContent = ({ icon, text }: MenuContentProps): JSX.Element => {
       {text && <p className="w-full break-words text-left">{capsFirstLetter(text)}</p>}
     </>
   )
+}
+
+/**
+ *
+ */
+export const usePrepUtils = (to: string): [string | false, string, boolean] => {
+  const location = useLocation()
+
+  // a menu with button should have a children and should not redirect to any link/url
+  const isStartWithHashtag = to.startsWith('#', 1)
+
+  // these two are for checking the current url is match with the current btn
+  const idForBtn = isStartWithHashtag && to.split('#', 2)[1]
+  const URLFirstSegment = location.pathname.split('/', 2)[1]
+
+  return [idForBtn, URLFirstSegment, idForBtn === URLFirstSegment]
 }

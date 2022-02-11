@@ -1,24 +1,18 @@
 import create from 'zustand'
 
-type ObjOfElement = { [key: string | number]: boolean }
+type ActiveStateObject = { [key: string | number]: boolean }
 
 interface Props {
-  objOfElement: ObjOfElement
-  toggleElementValue: (key: string | number) => void
-  setElementValue: (key: string | number, val: boolean) => void
-  addElementToObj: (key: string | number, value: boolean) => void
+  activeStateCollection: ActiveStateObject
+  getActiveStateByID: (key: string | number) => boolean
+  setActiveStateByID: (key: string | number, val: boolean) => void
 }
 
-export const useSidebarMenuStore = create<Props>(set => ({
-  objOfElement: {},
-  toggleElementValue: key =>
+export const useSidebarMenuStore = create<Props>((set, get) => ({
+  activeStateCollection: {},
+  getActiveStateByID: key => get().activeStateCollection[key],
+  setActiveStateByID: (key, val) =>
     set(state => ({
-      objOfElement: { ...state.objOfElement, ...{ [key]: !state.objOfElement[key] } },
+      activeStateCollection: { ...state.activeStateCollection, ...{ [key]: val } },
     })),
-  setElementValue: (key, val) =>
-    set(state => ({
-      objOfElement: { ...state.objOfElement, ...{ [key]: val } },
-    })),
-  addElementToObj: (key, value) =>
-    set(state => ({ objOfElement: { ...state.objOfElement, ...{ [key]: value } } })),
 }))

@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
+import { usePrepUtils } from 'src/helpers/menuUtils'
 import { useSidebarMenuStore } from 'src/store/sidebarMenuStore'
 
 interface Props<T> {
@@ -16,52 +16,31 @@ const ExtendedSlimSidebarListChildWrapper = <T extends { to: string }>({
   items,
   children,
 }: Props<T>) => {
-  const location = useLocation()
-
-  const addElement = useSidebarMenuStore(state => state.addElementToObj)
-  const objOfElement = useSidebarMenuStore(state => state.objOfElement)
-  const setElementValue = useSidebarMenuStore(state => state.setElementValue)
-
-  const [objOfElementWithID] = useState(objOfElement[id])
+  const setActiveStateByID = useSidebarMenuStore(state => state.setActiveStateByID)
+  const activeState = useSidebarMenuStore(state => state.getActiveStateByID(id))
 
   const ulRef = useRef<HTMLUListElement>(null)
 
-  // TODO; maybe should rework this piece of sh*t
-  let [URLFirstSegment] = useState('')
-  let [URLFirstSegmentOnFirstChild] = useState('')
-
-  // TODO; maybe should rework this piece of sh*t
-  if ('to' in items[0]) {
-    URLFirstSegment = location.pathname.split('/', 2)[1]
-    // we assume the children has the same prefix url and it should be match with the parent button
-    URLFirstSegmentOnFirstChild = items[0].to.split('/', 2)[1]
-  }
-
-  // what should we do on first render
-  useEffect(() => {
-    addElement(id, URLFirstSegment === URLFirstSegmentOnFirstChild)
-    // eslint-disable-next-line
-  }, [])
+  // Since this is the wrapper (container) and don't have "to" prop.
+  // We mock the "to" using it's first child (items[0]).
+  // We assume (and it should be when you define data item for menu)
+  // that "this" wrapper children, all has the same URLFirstSegment,
+  // so do "this" wrapper that act as a parent element.
+  const to = `/#${items[0].to.split('/', 2)[1]}`
+  const [, URLFirstSegment, isMatchBtnWithFirstSegment] = usePrepUtils(to)
 
   // what should we do when changing route
   useEffect(() => {
-    URLFirstSegment !== URLFirstSegmentOnFirstChild && setElementValue(id, false)
-    // eslint-disable-next-line
-  }, [URLFirstSegment, URLFirstSegmentOnFirstChild])
-
-  // what should we do when the state of objOfElement changes
-  useEffect(() => {
-    if (objOfElementWithID) {
-      ulRef.current?.classList.add('flex')
-      ulRef.current?.classList.remove('hidden')
-    } else {
-      ulRef.current?.classList.add('hidden')
-      ulRef.current?.classList.remove('flex')
-    }
-  }, [objOfElementWithID])
+    setActiveStateByID(id, isMatchBtnWithFirstSegment)
+  }, [isMatchBtnWithFirstSegment, URLFirstSegment, setActiveStateByID, id])
 
   return (
-    <ul ref={ulRef} className={'flex flex-col rounded-b bg-gray-300 py-2 shadow-inner'}>
+    <ul
+      ref={ulRef}
+      className={
+        'flex-col rounded-b py-2 shadow-inner' + (activeState ? ' flex bg-gray-300' : ' hidden')
+      }
+    >
       {items.map(item => children(item))}
     </ul>
   )
