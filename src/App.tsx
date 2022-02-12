@@ -1,6 +1,8 @@
 import { Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom'
 import RightFloatingOption from './components/organisms/RightFloatingOption'
+import FixedBoxLayout from './components/templates/FixedBoxLayout'
 import VerticalDashboardV1 from './components/templates/VerticalDashboardV1'
+import ButtonPage from './pages/components/ButtonPage'
 
 const NotFound = () => {
   const navigate = useNavigate()
@@ -16,7 +18,7 @@ const Help = () => <p>HELP page</p>
 const ItemContainer = ({ val }: { val: string | number }) => (
   <>
     <p>ITEM CONTAINER page</p>
-    <p>{val}</p>
+    <p className="text-lg font-medium text-blue-500">{val}</p>
     <Outlet />
   </>
 )
@@ -27,14 +29,25 @@ const Register = () => <p>REGISTER page</p>
 
 const App = () => {
   return (
-    <>
+    <div className="text-sm">
       {console.time('App render')}
       <RightFloatingOption />
 
       <Routes>
         <Route path="/" element={<VerticalDashboardV1 />}>
           <Route index element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="help" element={<Help />} />
+
+          <Route path="components" element={<FixedBoxLayout />}>
+            <Route index element={<ItemContainer val="/components" />} />
+            <Route path="badge" element={<ItemContainer val="badge" />} />
+            <Route path="button" element={<ButtonPage />} />
+            <Route path="breadcrumb" element={<ItemContainer val="breadcrumb" />} />
+            <Route path="progress-bar" element={<ItemContainer val="progress-bar" />} />
+            <Route path="spinner" element={<ItemContainer val="spinner" />} />
+            <Route path="tooltip" element={<ItemContainer val="tooltip" />} />
+          </Route>
 
           <Route path="items" element={<ItemContainer val="/items" />}>
             <Route path=":itemId" element={<ItemDetail />} />
@@ -85,7 +98,7 @@ const App = () => {
         </Route>
       </Routes>
       {console.timeEnd('App render')}
-    </>
+    </div>
   )
 }
 

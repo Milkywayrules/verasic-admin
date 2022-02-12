@@ -14,14 +14,13 @@ interface Props {
   outerChildren?: ReactNode
 }
 
-
 /**
  *
  */
 const NavLinkOrButton: FC<NavLinkOrButtonProps> = ({ id, to, className, children, title = '' }) => {
   className +=
     ' ' +
-    'w-full flex items-center gap-[18px] rounded border-2 border-transparent py-1.5 px-3 outline-none hover:bg-gray-200 focus-visible:border-blue-500 active:border-transparent active:bg-blue-100 active:text-blue-700'
+    'w-full flex items-center gap-[18px] rounded-[3px] border-2 border-transparent py-1.5 px-3 outline-none hover:bg-gray-200 focus-visible:border-blue-500 active:border-transparent active:bg-blue-100 active:text-blue-700'
 
   const setActiveStateByID = useSidebarMenuStore(state => state.setActiveStateByID)
   const activeState = useSidebarMenuStore(state => state.getActiveStateByID(id))

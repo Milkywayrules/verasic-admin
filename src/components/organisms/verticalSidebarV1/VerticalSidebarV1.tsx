@@ -40,7 +40,7 @@ const SlimSidebar = () => (
   </div>
 )
 const ExtendedSlimSidebar = () => (
-  <div className="relative flex h-screen w-60 shrink-0 grow-0 flex-col items-center justify-between bg-verasic-primary text-gray-700">
+  <div className="relative flex h-screen w-60 shrink-0 grow-0 flex-col items-center justify-between bg-verasic-primary bg-gray-100 text-gray-700">
     <div className=" h-full w-full py-1">
       <ExtendedSlimSidebarSection items={EXT_SLIM_SIDEBAR_DATA}>
         {parentItem => {

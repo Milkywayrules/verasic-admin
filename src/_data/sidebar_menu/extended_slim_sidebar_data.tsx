@@ -5,11 +5,13 @@ import {
   ChartBarIcon,
   CloudDownloadIcon,
   CodeIcon,
+  CollectionIcon,
   EmojiHappyIcon,
   MailIcon,
   MailOpenIcon,
   MapIcon,
   MenuAlt4Icon,
+  SaveIcon,
   ShieldExclamationIcon,
   TrashIcon,
 } from '@heroicons/react/outline'
@@ -35,6 +37,43 @@ const MENU1: ExtendedSlimSidebarItemWithHeading = {
   id: 1,
   title: 'General',
   listItem: [
+    {
+      id: 10,
+      to: '/#components',
+      content: <MenuContent icon={CollectionIcon} text="Components" />,
+      childItems: [
+        {
+          id: 102,
+          to: '/components/badge',
+          content: <MenuContent text="Badge" />,
+        },
+        {
+          id: 101,
+          to: '/components/button',
+          content: <MenuContent text="Button" />,
+        },
+        {
+          id: 106,
+          to: '/components/breadcrumb',
+          content: <MenuContent text="Breadcrumb" />,
+        },
+        {
+          id: 103,
+          to: '/components/progress-bar',
+          content: <MenuContent text="Progress Bar" />,
+        },
+        {
+          id: 104,
+          to: '/components/spinner',
+          content: <MenuContent text="Spinner" />,
+        },
+        {
+          id: 105,
+          to: '/components/tooltip',
+          content: <MenuContent text="Tooltip" />,
+        },
+      ],
+    },
     {
       id: 11,
       to: '/#menu_11',

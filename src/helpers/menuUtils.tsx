@@ -5,7 +5,7 @@ import { capsFirstLetter } from './textUtils'
 export type iconFn = (props: SVGProps<SVGSVGElement>) => JSX.Element
 
 interface MenuContentProps {
-  icon: iconFn | [icon: iconFn, props: SVGProps<SVGSVGElement>]
+  icon?: iconFn | [icon: iconFn, props: SVGProps<SVGSVGElement>]
   text?: string
 }
 
@@ -43,15 +43,23 @@ export const processIconWithProps = (
  * The icon props will override the predefined props inside the component.
  */
 export const MenuContent = ({ icon, text }: MenuContentProps): JSX.Element => {
-  const [iconFn, props] = processIconWithProps(icon)
-  props.className = text ? 'h-5 w-5 flex-shrink-0' : 'h-6 w-6'
+  if (icon) {
+    const [iconFn, props] = processIconWithProps(icon)
+    props.className = text ? 'h-5 w-5 flex-shrink-0' : 'h-6 w-6'
 
-  return (
-    <>
-      {iconFn(props)}
-      {text && <p className="w-full break-words text-left">{capsFirstLetter(text)}</p>}
-    </>
-  )
+    return (
+      <>
+        {iconFn(props)}
+        {text && <p className="w-full break-words text-left">{capsFirstLetter(text)}</p>}
+      </>
+    )
+  }
+
+  if (text) {
+    return <p className="w-full break-words text-left">{capsFirstLetter(text)}</p>
+  }
+
+  return <></>
 }
 
 /**

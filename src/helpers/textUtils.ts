@@ -1,3 +1,9 @@
+/**
+ * Capitalize first character of a text
+ *
+ * @param text text to transform
+ * @returns capitalize text on the first char
+ */
 export const capsFirstLetter = (text: string) => {
   return text
     .split('')
@@ -5,8 +11,13 @@ export const capsFirstLetter = (text: string) => {
     .join('')
 }
 
+/**
+ * Capitalize every first character on every word
+ *
+ * @param text text to transform
+ * @returns capitalized text on every first char
+ */
 export const capsEveryFirstLetter = (text: string) => {
-  console.time('caps')
   const w = text
     .split(' ')
     .map(arrOfStr =>
@@ -16,7 +27,6 @@ export const capsEveryFirstLetter = (text: string) => {
         .join(''),
     )
     .join(' ')
-  console.timeEnd('caps')
 
   return w
 }
