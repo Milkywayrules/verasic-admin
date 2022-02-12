@@ -1,4 +1,5 @@
 import { Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom'
+import Button from './components/molecules/Button'
 import RightFloatingOption from './components/organisms/RightFloatingOption'
 import FixedBoxLayout from './components/templates/FixedBoxLayout'
 import VerticalDashboardV1 from './components/templates/VerticalDashboardV1'
@@ -13,7 +14,17 @@ const NotFound = () => {
     </button>
   )
 }
-const Home = () => <p>HOME page</p>
+const Home = () => {
+  const navigate = useNavigate()
+
+  return (
+    <div className="py-6 px-9">
+      <Button autoFocus onClick={() => navigate('/components/button')}>
+        Go to Button component page
+      </Button>
+    </div>
+  )
+}
 const Help = () => <p>HELP page</p>
 const ItemContainer = ({ val }: { val: string | number }) => (
   <>
