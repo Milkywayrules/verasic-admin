@@ -66,7 +66,16 @@
           "**/*.stories.*"
         ],
         "rules": {
-          "import/no-anonymous-default-export": "off"
+          "import/no-anonymous-default-export": "off",
+          "no-lone-blocks": "off"
+        }
+      },
+      {
+        "files": [
+          "src/components/molecules/Button.tsx"
+        ],
+        "rules": {
+          "no-lone-blocks": "off"
         }
       }
     ]
