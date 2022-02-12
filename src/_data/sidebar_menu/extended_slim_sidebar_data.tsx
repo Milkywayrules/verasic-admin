@@ -11,7 +11,6 @@ import {
   MailOpenIcon,
   MapIcon,
   MenuAlt4Icon,
-  SaveIcon,
   ShieldExclamationIcon,
   TrashIcon,
 } from '@heroicons/react/outline'

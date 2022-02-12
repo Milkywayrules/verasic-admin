@@ -7,7 +7,7 @@ interface Props {
 const Spinner = forwardRef(({ className = '' }: Props, ref: ForwardedRef<SVGSVGElement>) => (
   <svg
     ref={ref}
-    className={'flex h-6 w-6 animate-spin items-center justify-between py-0' + ' ' + className}
+    className={`flex h-6 w-6 animate-spin items-center justify-between py-0 ${className}`}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"

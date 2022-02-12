@@ -45,6 +45,7 @@ export const getButtonClassName = (
   let spinnerClassName = ''
 
   /**
+   * use a lone-block.
    * General button sizing
    */
   {
@@ -57,6 +58,7 @@ export const getButtonClassName = (
   }
 
   /**
+   * use a lone-block.
    * Specific state button styling come after sizing
    */
   {
@@ -72,6 +74,7 @@ export const getButtonClassName = (
   }
 
   /**
+   * use a lone-block.
    * General button styling come last
    */
   {

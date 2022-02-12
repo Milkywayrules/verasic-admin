@@ -3,7 +3,7 @@ import VerticalSidebarV1 from '../organisms/verticalSidebarV1/VerticalSidebarV1'
 
 const VerticalDashboardV1 = () => {
   return (
-    <div className="flex h-screen w-full bg-gray-700 text-indigo-200">
+    <div className="flex h-screen w-full bg-rose-200 text-indigo-600">
       <VerticalSidebarV1 />
 
       <Outlet />

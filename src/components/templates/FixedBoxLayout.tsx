@@ -1,5 +1,5 @@
 import { HomeIcon } from '@heroicons/react/outline'
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 const FixedBoxLayout = () => {
   return (
@@ -68,6 +68,7 @@ const FixedBoxLayout = () => {
             <a
               href="https://github.com/Milkywayrules/verasic-admin"
               target="_blank"
+              rel="noreferrer"
               className="text-indigo-500 underline"
             >
               Verasic Dashboard
