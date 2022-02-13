@@ -15,7 +15,7 @@ export type ButtonVariant =
   | 'subtle-link'
   | 'warning'
   | 'danger'
-export type ButtonSpacing = 'default' | 'compact' | 'none'
+export type ButtonSizing = 'default' | 'fat' | 'compact' | 'none'
 type PickedButtonAttrs = Pick<
   DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
   'autoFocus' | 'className' | 'onBlur' | 'onClick' | 'onFocus' | 'type' | 'ref' | 'style'
@@ -30,24 +30,24 @@ export interface ButtonProps extends PickedButtonAttrs {
   iconBefore?: ReactChild | ((props: SVGProps<SVGSVGElement>) => JSX.Element)
   iconAfter?: ReactChild | ((props: SVGProps<SVGSVGElement>) => JSX.Element)
 
-  spacing?: ButtonSpacing
+  sizing?: ButtonSizing
   testId?: string
   analyticsContext?: Record<string, any>
 }
 
 /**
- * General button spacing / sizing should come early (or first)
+ * General button sizing should come early (or first)
  */
-const getSpacingClassName = (spacing: ButtonSpacing): string => {
+const getSizingClassName = (sizing: ButtonSizing): string => {
   let className = ''
 
-  if (spacing === 'default') {
-    className = 'h-8'
+  if (sizing === 'default') {
+    className = 'h-9 px-3'
   }
-  if (spacing === 'compact') {
-    className = 'h-6'
+  if (sizing === 'compact') {
+    className = 'h-6 px-3'
   }
-  if (spacing === 'none') {
+  if (sizing === 'none') {
     className = 'h-5 px-0'
   }
 
@@ -127,7 +127,7 @@ const getVariantClassName = (variant: ButtonVariant): [string, string] => {
 }
 
 export const buildButtonClassName = (
-  spacing: ButtonSpacing,
+  sizing: ButtonSizing,
   isDisabled: boolean,
   isSelected: boolean,
   variant: ButtonVariant,
@@ -140,7 +140,7 @@ export const buildButtonClassName = (
 
   return [
     [
-      getSpacingClassName(spacing),
+      getSizingClassName(sizing),
       getStateConditionClassName(isDisabled, isSelected),
       !isState && className,
     ].join(' '),
@@ -157,7 +157,7 @@ const Button: FC<ButtonProps> = forwardRef(
       isDisabled = false,
       isSelected = false,
       type = 'button',
-      spacing = 'default',
+      sizing = 'default',
       testId,
       analyticsContext,
       style,
@@ -167,14 +167,14 @@ const Button: FC<ButtonProps> = forwardRef(
     },
     ref,
   ) => {
-    const [buttonClassName] = buildButtonClassName(spacing, isDisabled, isSelected, variant)
+    const [buttonClassName] = buildButtonClassName(sizing, isDisabled, isSelected, variant)
 
     return (
       <button
         ref={ref}
         type={type}
         className={
-          'flex rounded-[3px] px-3 font-medium outline-none focus-visible:ring-2' +
+          'flex rounded-[3px] font-medium outline-none focus-visible:ring-2' +
           ' ' +
           buttonClassName +
           ' ' +

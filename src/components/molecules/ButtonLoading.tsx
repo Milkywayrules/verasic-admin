@@ -20,7 +20,7 @@ const ButtonLoading: FC<Props> = ({
   const spinnerRef = useRef<SVGSVGElement>(null)
 
   const [, spinnerStyleClassName] = buildButtonClassName(
-    props.spacing ?? 'default',
+    props.sizing ?? 'default',
     props.isDisabled ?? false,
     props.isSelected ?? false,
     props.variant ?? 'default',

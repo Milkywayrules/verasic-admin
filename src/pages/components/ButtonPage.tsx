@@ -301,38 +301,38 @@ const ButtonPage = () => {
           <SectionTitle>Sizing</SectionTitle>
 
           <PatternBox>
-            {/* Primary + spacing default */}
+            {/* Primary + sizing default */}
             <div className="flex gap-3">
               <div>
                 {(variant = 'primary') && undefined}
-                <Button variant={variant} spacing="default">
-                  {getText('text-only', variant)}
+                <Button variant={variant} sizing="default">
+                  Default button
                 </Button>
               </div>
               <div>
-                <Button variant={variant} spacing="compact">
+                <Button variant={variant} sizing="compact">
                   Compact button
                 </Button>
               </div>
               <div>
                 {(variant = 'subtle-link') && undefined}
-                <Button variant={variant} spacing="none">
+                <Button variant={variant} sizing="none">
                   None button
                 </Button>
               </div>
             </div>
 
-            {/* Primary + spacing default */}
+            {/* Primary + sizing default */}
             <div className="flex gap-3">
               {(variant = 'primary') && undefined}
-              <Button variant={variant} spacing="default" className="w-full">
-                {getText('text-only', variant)} full container width
+              <Button variant={variant} sizing="default" className="w-full">
+                {getText('text-only', variant)} with full container width
               </Button>
             </div>
             <div className="flex gap-3">
               <Button
                 variant={variant}
-                spacing="default"
+                sizing="default"
                 className="w-full"
                 iconBefore={iconForButton2}
               >
