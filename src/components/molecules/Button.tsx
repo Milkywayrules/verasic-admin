@@ -41,21 +41,11 @@ export interface ButtonProps extends PickedButtonAttrs {
 const getSizingClassName = (sizing: ButtonSizing): string => {
   let className = ''
 
-  if (sizing === 'fat') {
-    className = 'h-11 px-6'
-  }
-  if (sizing === 'wide') {
-    className = 'h-9 px-6'
-  }
-  if (sizing === 'default') {
-    className = 'h-9 px-3'
-  }
-  if (sizing === 'compact') {
-    className = 'h-6 px-3'
-  }
-  if (sizing === 'none') {
-    className = 'h-5 px-0'
-  }
+  if (sizing === 'fat') className = 'h-11 px-6'
+  else if (sizing === 'wide') className = 'h-9 px-6'
+  else if (sizing === 'default') className = 'h-9 px-3'
+  else if (sizing === 'compact') className = 'h-6 px-3'
+  else if (sizing === 'none') className = 'h-5 px-0'
 
   return className
 }
@@ -87,46 +77,48 @@ const getVariantClassName = (variant: ButtonVariant): [string, string] => {
   let className = ''
   let spinnerClassName = ''
 
-  if (variant === 'default') {
-    spinnerClassName = 'text-gray-700'
-    className =
-      'bg-gray-100/75 text-gray-700 hover:bg-gray-200 active:bg-blue-100 focus-visible:ring-blue-500 active:text-blue-700'
-  }
+  switch (variant) {
+    case 'default':
+      spinnerClassName = 'text-gray-700'
+      className =
+        'bg-gray-100/75 text-gray-700 hover:bg-gray-200 active:bg-blue-100 focus-visible:ring-blue-500 active:text-blue-700'
+      break
 
-  if (variant === 'primary') {
-    spinnerClassName = 'text-white'
-    className =
-      'bg-blue-700 text-white hover:bg-blue-600 active:bg-blue-800 focus-visible:ring-blue-400'
-  }
+    case 'primary':
+      spinnerClassName = 'text-white'
+      className =
+        'bg-blue-700 text-white hover:bg-blue-600 active:bg-blue-800 focus-visible:ring-blue-400'
+      break
 
-  if (variant === 'subtle') {
-    spinnerClassName = 'text-gray-700'
-    className =
-      'text-gray-700 hover:bg-gray-200 active:bg-blue-100 focus-visible:ring-blue-500 active:text-blue-700'
-  }
+    case 'subtle':
+      spinnerClassName = 'text-gray-700'
+      className =
+        'text-gray-700 hover:bg-gray-200 active:bg-blue-100 focus-visible:ring-blue-500 active:text-blue-700'
+      break
 
-  if (variant === 'link') {
-    spinnerClassName = 'text-blue-700'
-    className =
-      'text-blue-700 hover:text-blue-600 active:text-blue-900 focus-visible:ring-blue-500 hover:underline focus-visible:underline'
-  }
+    case 'link':
+      spinnerClassName = 'text-blue-700'
+      className =
+        'text-blue-700 hover:text-blue-600 active:text-blue-900 focus-visible:ring-blue-500 hover:underline focus-visible:underline'
+      break
 
-  if (variant === 'subtle-link') {
-    spinnerClassName = 'text-gray-500'
-    className =
-      'text-gray-500 hover:text-gray-400 active:text-gray-700 focus-visible:ring-blue-500 hover:underline focus-visible:underline'
-  }
+    case 'subtle-link':
+      spinnerClassName = 'text-gray-500'
+      className =
+        'text-gray-500 hover:text-gray-400 active:text-gray-700 focus-visible:ring-blue-500 hover:underline focus-visible:underline'
+      break
 
-  if (variant === 'warning') {
-    spinnerClassName = 'text-white'
-    className =
-      'bg-[#FFAB00] text-gray-800 hover:bg-amber-400 active:bg-orange-400 focus-visible:ring-orange-500'
-  }
+    case 'warning':
+      spinnerClassName = 'text-white'
+      className =
+        'bg-[#FFAB00] text-gray-800 hover:bg-amber-400 active:bg-orange-400 focus-visible:ring-orange-500'
+      break
 
-  if (variant === 'danger') {
-    spinnerClassName = 'text-white'
-    className =
-      'bg-red-600 text-white hover:bg-red-500 active:bg-red-700 focus-visible:ring-red-400'
+    case 'danger':
+      spinnerClassName = 'text-white'
+      className =
+        'bg-red-600 text-white hover:bg-red-500 active:bg-red-700 focus-visible:ring-red-400'
+      break
   }
 
   return [className, spinnerClassName]
