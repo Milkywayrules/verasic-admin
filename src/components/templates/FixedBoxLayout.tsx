@@ -31,7 +31,7 @@ const FixedBoxLayout = () => {
           </p>
 
           {/* page title later */}
-          <h1 className="mt-1 w-1/2 text-3xl font-bold text-gray-900">
+          <h1 className="mt-1 w-5/6 text-3xl font-bold text-gray-900 lg:w-1/2">
             Button Components - Verasic
           </h1>
 
