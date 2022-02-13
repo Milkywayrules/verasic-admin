@@ -305,6 +305,16 @@ const ButtonPage = () => {
             <div className="flex gap-3">
               <div>
                 {(variant = 'primary') && undefined}
+                <Button variant={variant} sizing="fat">
+                  Fat button
+                </Button>
+              </div>
+              <div>
+                <Button variant={variant} sizing="wide">
+                  Wide button
+                </Button>
+              </div>
+              <div>
                 <Button variant={variant} sizing="default">
                   Default button
                 </Button>

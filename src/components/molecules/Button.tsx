@@ -15,7 +15,7 @@ export type ButtonVariant =
   | 'subtle-link'
   | 'warning'
   | 'danger'
-export type ButtonSizing = 'default' | 'fat' | 'compact' | 'none'
+export type ButtonSizing = 'fat' | 'wide' | 'default' | 'compact' | 'none'
 type PickedButtonAttrs = Pick<
   DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
   'autoFocus' | 'className' | 'onBlur' | 'onClick' | 'onFocus' | 'type' | 'ref' | 'style'
@@ -41,6 +41,12 @@ export interface ButtonProps extends PickedButtonAttrs {
 const getSizingClassName = (sizing: ButtonSizing): string => {
   let className = ''
 
+  if (sizing === 'fat') {
+    className = 'h-11 px-6'
+  }
+  if (sizing === 'wide') {
+    className = 'h-9 px-6'
+  }
   if (sizing === 'default') {
     className = 'h-9 px-3'
   }
