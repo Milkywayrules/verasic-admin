@@ -58,7 +58,10 @@ const base = {
       pink: 'bg-pink-100 text-pink-700 hover:bg-pink-200 focus:bg-pink-300',
       warning: 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 focus:bg-yellow-300',
       question: 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200 focus:bg-indigo-300',
-      deny: 'text-red-700 hover:bg-red-100 focus:bg-red-200',
+      deny:
+        icon === 'error'
+          ? 'text-yellow-600 hover:bg-yellow-100 focus:bg-yellow-200'
+          : 'text-red-700 hover:bg-red-100 focus:bg-red-200',
       cancel: 'hover:bg-gray-100 focus:bg-gray-200',
     }
 
