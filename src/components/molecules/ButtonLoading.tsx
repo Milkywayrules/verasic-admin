@@ -1,13 +1,13 @@
 import { FC, useEffect, useRef } from 'react'
 import Spinner from '../atoms/Spinner'
-import Button, { ButtonProps, getButtonClassName } from './Button'
+import Button, { ButtonProps, buildButtonClassName } from './Button'
 
-interface ButtonLoadingProps extends ButtonProps {
+interface Props extends ButtonProps {
   isLoading?: boolean
   spinnerClassName?: string
 }
 
-const ButtonLoading: FC<ButtonLoadingProps> = ({
+const ButtonLoading: FC<Props> = ({
   children,
   isLoading = false,
   spinnerClassName = 'invisible',
@@ -19,7 +19,7 @@ const ButtonLoading: FC<ButtonLoadingProps> = ({
   const textRef = useRef<HTMLSpanElement>(null)
   const spinnerRef = useRef<SVGSVGElement>(null)
 
-  const [, spinnerStyleClassName] = getButtonClassName(
+  const [, spinnerStyleClassName] = buildButtonClassName(
     props.spacing ?? 'default',
     props.isDisabled ?? false,
     props.isSelected ?? false,
