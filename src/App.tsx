@@ -4,6 +4,7 @@ import RightFloatingOption from './components/organisms/RightFloatingOption'
 import FixedBoxLayout from './components/templates/FixedBoxLayout'
 import VerticalDashboardV1 from './components/templates/VerticalDashboardV1'
 import ButtonPage from './pages/components/ButtonPage'
+import ToastPage from './pages/components/ToastPage'
 
 const NotFound = () => {
   const navigate = useNavigate()
@@ -57,6 +58,7 @@ const App = () => {
             <Route path="breadcrumb" element={<ItemContainer val="breadcrumb" />} />
             <Route path="progress-bar" element={<ItemContainer val="progress-bar" />} />
             <Route path="spinner" element={<ItemContainer val="spinner" />} />
+            <Route path="toast" element={<ToastPage />} />
             <Route path="tooltip" element={<ItemContainer val="tooltip" />} />
           </Route>
 

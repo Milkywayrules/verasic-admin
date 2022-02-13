@@ -67,6 +67,11 @@ const MENU1: ExtendedSlimSidebarItemWithHeading = {
           content: <MenuContent text="Spinner" />,
         },
         {
+          id: 107,
+          to: '/components/toast',
+          content: <MenuContent text="Toast" />,
+        },
+        {
           id: 105,
           to: '/components/tooltip',
           content: <MenuContent text="Tooltip" />,
