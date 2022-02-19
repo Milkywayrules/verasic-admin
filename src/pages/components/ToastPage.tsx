@@ -4,9 +4,12 @@ import PatternBoxRow from 'src/components/atoms/PatternBoxRow'
 import SectionTitle from 'src/components/atoms/SectionTitle'
 import Button from 'src/components/molecules/Button'
 import toast from 'src/helpers/toast'
+import { useTitle } from 'src/hooks/useTitle'
 import { SweetAlertIcon } from 'sweetalert2'
 
 const ToastPage = () => {
+  useTitle('Toasts')
+
   const handleToastBasic = (icon: SweetAlertIcon) => {
     toast.basic('Fired! 🔥🔥🔥', icon)
   }

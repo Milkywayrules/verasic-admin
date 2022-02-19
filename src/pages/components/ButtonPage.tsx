@@ -7,6 +7,7 @@ import SectionTitle from 'src/components/atoms/SectionTitle'
 import Button, { ButtonVariant } from 'src/components/molecules/Button'
 import ButtonLoading from 'src/components/molecules/ButtonLoading'
 import { capsEveryFirstLetter } from 'src/helpers/textUtils'
+import { useTitle } from 'src/hooks/useTitle'
 
 /**
  *
@@ -22,7 +23,7 @@ const getText = (type: 'text-only' | 'with-icon', btnType?: ButtonVariant) => {
  *
  */
 const ButtonPage = () => {
-  console.log('render: button page')
+  useTitle('Buttons')
 
   const [isLoadingObj, setIsLoadingObj] = useState({
     0: false,
