@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from 'react'
 import Spinner from '../atoms/Spinner'
-import Button, { ButtonProps, buildButtonClassName } from './Button'
+import Button, { buildButtonClassName, ButtonProps } from './Button'
 
 interface Props extends ButtonProps {
   isLoading?: boolean
