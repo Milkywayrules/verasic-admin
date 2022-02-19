@@ -3,6 +3,7 @@ import Button from './components/molecules/Button'
 import RightFloatingOption from './components/organisms/RightFloatingOption'
 import FixedBoxLayout from './components/templates/FixedBoxLayout'
 import VerticalDashboardV1 from './components/templates/VerticalDashboardV1'
+import BadgePage from './pages/components/BadgePage'
 import ButtonPage from './pages/components/ButtonPage'
 import ToastPage from './pages/components/ToastPage'
 
@@ -53,13 +54,9 @@ const App = () => {
 
           <Route path="components" element={<FixedBoxLayout />}>
             <Route index element={<ItemContainer val="/components" />} />
-            <Route path="badge" element={<ItemContainer val="badge" />} />
+            <Route path="badge" element={<BadgePage />} />
             <Route path="button" element={<ButtonPage />} />
-            <Route path="breadcrumb" element={<ItemContainer val="breadcrumb" />} />
-            <Route path="progress-bar" element={<ItemContainer val="progress-bar" />} />
-            <Route path="spinner" element={<ItemContainer val="spinner" />} />
             <Route path="toast" element={<ToastPage />} />
-            <Route path="tooltip" element={<ItemContainer val="tooltip" />} />
           </Route>
 
           <Route path="items" element={<ItemContainer val="/items" />}>
