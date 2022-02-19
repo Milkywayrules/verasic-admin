@@ -153,10 +153,7 @@ const Badge: FC<BadgeProps> = ({
 
   if (iconOnly) {
     return (
-      <div
-        className={'flex cursor-default items-center justify-center' + ' ' + className}
-        {...props}
-      >
+      <div className={`flex cursor-default items-center justify-center ${className}`} {...props}>
         {iconOnly({ className: iconClassName })}
       </div>
     )
