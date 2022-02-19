@@ -41,6 +41,12 @@ const ButtonPage = () => {
     12: false,
     13: false,
     14: false,
+    15: false,
+    16: false,
+    17: false,
+    18: false,
+    19: false,
+    20: false,
   })
 
   const handleClick = (key: number) =>
@@ -219,9 +225,9 @@ const ButtonPage = () => {
               />
             </PatternBoxRow>
 
-            {/* Primary + loading */}
+            {/* Link + loading */}
             <PatternBoxRow>
-              {(variant = 'primary') && undefined}
+              {(variant = 'link') && undefined}
               <ButtonLoading
                 variant={variant}
                 onClick={() => handleClick(6)}
@@ -245,9 +251,9 @@ const ButtonPage = () => {
               />
             </PatternBoxRow>
 
-            {/* Warning + loading */}
+            {/* Subtle-link + loading */}
             <PatternBoxRow>
-              {(variant = 'warning') && undefined}
+              {(variant = 'subtle-link') && undefined}
               <ButtonLoading
                 variant={variant}
                 onClick={() => handleClick(9)}
@@ -271,9 +277,9 @@ const ButtonPage = () => {
               />
             </PatternBoxRow>
 
-            {/* Danger + loading */}
+            {/* Primary + loading */}
             <PatternBoxRow>
-              {(variant = 'danger') && undefined}
+              {(variant = 'primary') && undefined}
               <ButtonLoading
                 variant={variant}
                 onClick={() => handleClick(12)}
@@ -293,6 +299,58 @@ const ButtonPage = () => {
                 variant={variant}
                 onClick={() => handleClick(14)}
                 isLoading={isLoadingObj[14]}
+                iconBefore={iconForButton2}
+              />
+            </PatternBoxRow>
+
+            {/* Warning + loading */}
+            <PatternBoxRow>
+              {(variant = 'warning') && undefined}
+              <ButtonLoading
+                variant={variant}
+                onClick={() => handleClick(15)}
+                isLoading={isLoadingObj[15]}
+              >
+                {getText('text-only', variant)} + loading state
+              </ButtonLoading>
+              <ButtonLoading
+                variant={variant}
+                onClick={() => handleClick(16)}
+                isLoading={isLoadingObj[16]}
+                iconBefore={iconForButton2}
+              >
+                {getText('with-icon')}
+              </ButtonLoading>
+              <ButtonLoading
+                variant={variant}
+                onClick={() => handleClick(17)}
+                isLoading={isLoadingObj[17]}
+                iconBefore={iconForButton2}
+              />
+            </PatternBoxRow>
+
+            {/* Danger + loading */}
+            <PatternBoxRow>
+              {(variant = 'danger') && undefined}
+              <ButtonLoading
+                variant={variant}
+                onClick={() => handleClick(18)}
+                isLoading={isLoadingObj[18]}
+              >
+                {getText('text-only', variant)} + loading state
+              </ButtonLoading>
+              <ButtonLoading
+                variant={variant}
+                onClick={() => handleClick(19)}
+                isLoading={isLoadingObj[19]}
+                iconBefore={iconForButton2}
+              >
+                {getText('with-icon')}
+              </ButtonLoading>
+              <ButtonLoading
+                variant={variant}
+                onClick={() => handleClick(20)}
+                isLoading={isLoadingObj[20]}
                 iconBefore={iconForButton2}
               />
             </PatternBoxRow>
