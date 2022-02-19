@@ -42,31 +42,31 @@ const ToastPage = () => {
           <PatternBox>
             <div className="flex flex-col gap-3">
               <div>
-                <Button autoFocus variant="primary" onClick={() => handleToastBasic('success')}>
+                <Button variant="primary" onClick={() => handleToastBasic('success')}>
                   Success toast
                 </Button>
               </div>
 
               <div>
-                <Button autoFocus variant="default" onClick={() => handleToastBasic('info')}>
+                <Button variant="default" onClick={() => handleToastBasic('info')}>
                   Info toast
                 </Button>
               </div>
 
               <div>
-                <Button autoFocus variant="subtle" onClick={() => handleToastBasic('question')}>
+                <Button variant="subtle" onClick={() => handleToastBasic('question')}>
                   Question toast
                 </Button>
               </div>
 
               <div>
-                <Button autoFocus variant="warning" onClick={() => handleToastBasic('warning')}>
+                <Button variant="warning" onClick={() => handleToastBasic('warning')}>
                   Warning toast
                 </Button>
               </div>
 
               <div>
-                <Button autoFocus variant="danger" onClick={() => handleToastBasic('error')}>
+                <Button variant="danger" onClick={() => handleToastBasic('error')}>
                   Error toast
                 </Button>
               </div>
@@ -80,28 +80,19 @@ const ToastPage = () => {
           <PatternBox>
             <div className="flex flex-col gap-3">
               <div>
-                <Button
-                  autoFocus
-                  variant="primary"
-                  onClick={() => handleToastConfirmation('success', 'OK')}
-                >
+                <Button variant="primary" onClick={() => handleToastConfirmation('success', 'OK')}>
                   Success toast
                 </Button>
               </div>
 
               <div>
-                <Button
-                  autoFocus
-                  variant="default"
-                  onClick={() => handleToastConfirmation('info', 'OK')}
-                >
+                <Button variant="default" onClick={() => handleToastConfirmation('info', 'OK')}>
                   Info toast
                 </Button>
               </div>
 
               <div>
                 <Button
-                  autoFocus
                   variant="subtle"
                   onClick={() => handleToastConfirmation('question', 'Accept')}
                 >
@@ -111,7 +102,6 @@ const ToastPage = () => {
 
               <div>
                 <Button
-                  autoFocus
                   variant="warning"
                   onClick={() => handleToastConfirmation('warning', 'Understand')}
                 >
@@ -121,7 +111,6 @@ const ToastPage = () => {
 
               <div>
                 <Button
-                  autoFocus
                   variant="danger"
                   onClick={() => handleToastConfirmation('error', 'Fix now')}
                 >
@@ -139,7 +128,6 @@ const ToastPage = () => {
             <div className="flex flex-col gap-3">
               <div>
                 <Button
-                  autoFocus
                   variant="subtle"
                   onClick={() => handleToastDecide('question', 'Accept', 'Decline')}
                 >
@@ -149,7 +137,6 @@ const ToastPage = () => {
 
               <div>
                 <Button
-                  autoFocus
                   variant="warning"
                   onClick={() => handleToastDecide('warning', 'Understand', 'Decline')}
                 >
@@ -159,7 +146,6 @@ const ToastPage = () => {
 
               <div>
                 <Button
-                  autoFocus
                   variant="danger"
                   onClick={() => handleToastDecide('error', 'Fix now', 'Later')}
                 >
@@ -177,7 +163,6 @@ const ToastPage = () => {
             <div className="flex flex-col gap-3">
               <div>
                 <Button
-                  autoFocus
                   variant="subtle"
                   onClick={() => handleToastDecideWithCancel('question', 'Accept', 'Decline')}
                 >
@@ -187,7 +172,6 @@ const ToastPage = () => {
 
               <div>
                 <Button
-                  autoFocus
                   variant="warning"
                   onClick={() => handleToastDecideWithCancel('warning', 'Understand', 'Decline')}
                 >
@@ -197,7 +181,6 @@ const ToastPage = () => {
 
               <div>
                 <Button
-                  autoFocus
                   variant="danger"
                   onClick={() => handleToastDecideWithCancel('error', 'Fix now', 'Later')}
                 >
