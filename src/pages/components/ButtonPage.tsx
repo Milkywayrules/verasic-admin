@@ -1,7 +1,8 @@
 import { ChatAlt2Icon, MoonIcon } from '@heroicons/react/outline'
 import { useState } from 'react'
-import PatternBox from 'src/components/atoms/PatternBox'
 import PageSection from 'src/components/atoms/PageSection'
+import PatternBox from 'src/components/atoms/PatternBox'
+import PatternBoxRow from 'src/components/atoms/PatternBoxRow'
 import SectionTitle from 'src/components/atoms/SectionTitle'
 import Button, { ButtonVariant } from 'src/components/molecules/Button'
 import ButtonLoading from 'src/components/molecules/ButtonLoading'
@@ -56,74 +57,74 @@ const ButtonPage = () => {
 
           <PatternBox>
             {/* Default */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'default') && undefined}
               <Button variant={variant}>{getText('text-only', variant)}</Button>
               <Button variant={variant} iconBefore={iconForButton}>
                 {getText('with-icon')}
               </Button>
               <Button variant={variant} iconBefore={iconForButton} />
-            </div>
+            </PatternBoxRow>
 
             {/* Subtle */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'subtle') && undefined}
               <Button variant={variant}>{getText('text-only', variant)}</Button>
               <Button variant={variant} iconBefore={iconForButton}>
                 {getText('with-icon')}
               </Button>
               <Button variant={variant} iconBefore={iconForButton} />
-            </div>
+            </PatternBoxRow>
 
             {/* Link */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'link') && undefined}
               <Button variant={variant}>{getText('text-only', variant)}</Button>
               <Button variant={variant} iconBefore={iconForButton}>
                 {getText('with-icon')}
               </Button>
               <Button variant={variant} iconBefore={iconForButton} />
-            </div>
+            </PatternBoxRow>
 
             {/* Subtle Link */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'subtle-link') && undefined}
               <Button variant={variant}>{getText('text-only', variant)}</Button>
               <Button variant={variant} iconBefore={iconForButton}>
                 {getText('with-icon')}
               </Button>
               <Button variant={variant} iconBefore={iconForButton} />
-            </div>
+            </PatternBoxRow>
 
             {/* Primary */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'primary') && undefined}
               <Button variant={variant}>{getText('text-only', variant)}</Button>
               <Button variant={variant} iconBefore={iconForButton}>
                 {getText('with-icon')}
               </Button>
               <Button variant={variant} iconBefore={iconForButton} />
-            </div>
+            </PatternBoxRow>
 
             {/* Warning */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'warning') && undefined}
               <Button variant={variant}>{getText('text-only', variant)}</Button>
               <Button variant={variant} iconBefore={iconForButton}>
                 {getText('with-icon')}
               </Button>
               <Button variant={variant} iconBefore={iconForButton} />
-            </div>
+            </PatternBoxRow>
 
             {/* Danger */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'danger') && undefined}
               <Button variant={variant}>{getText('text-only', variant)}</Button>
               <Button variant={variant} iconBefore={iconForButton}>
                 {getText('with-icon')}
               </Button>
               <Button variant={variant} iconBefore={iconForButton} />
-            </div>
+            </PatternBoxRow>
           </PatternBox>
         </PageSection>
 
@@ -132,7 +133,7 @@ const ButtonPage = () => {
 
           <PatternBox>
             {/* Danger + disabled */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'danger') && undefined}
               <Button variant={variant} isDisabled>
                 {getText('text-only', variant)} + disabled state
@@ -141,10 +142,10 @@ const ButtonPage = () => {
                 {getText('with-icon')}
               </Button>
               <Button variant={variant} iconBefore={iconForButton} isDisabled />
-            </div>
+            </PatternBoxRow>
 
             {/* Primary + selected */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'primary') && undefined}
               <Button variant={variant} isSelected>
                 {getText('text-only', variant)} + selected state
@@ -153,7 +154,7 @@ const ButtonPage = () => {
                 {getText('with-icon')}
               </Button>
               <Button variant={variant} iconBefore={iconForButton} isSelected />
-            </div>
+            </PatternBoxRow>
           </PatternBox>
         </PageSection>
 
@@ -162,7 +163,7 @@ const ButtonPage = () => {
 
           <PatternBox>
             {/* Default + loading */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'default') && undefined}
               <ButtonLoading
                 variant={variant}
@@ -189,10 +190,10 @@ const ButtonPage = () => {
                   iconBefore={iconForButton2}
                 />
               </div>
-            </div>
+            </PatternBoxRow>
 
             {/* Subtle + loading */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'subtle') && undefined}
               <ButtonLoading
                 variant={variant}
@@ -215,10 +216,10 @@ const ButtonPage = () => {
                 isLoading={isLoadingObj[5]}
                 iconBefore={iconForButton2}
               />
-            </div>
+            </PatternBoxRow>
 
             {/* Primary + loading */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'primary') && undefined}
               <ButtonLoading
                 variant={variant}
@@ -241,10 +242,10 @@ const ButtonPage = () => {
                 isLoading={isLoadingObj[8]}
                 iconBefore={iconForButton2}
               />
-            </div>
+            </PatternBoxRow>
 
             {/* Warning + loading */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'warning') && undefined}
               <ButtonLoading
                 variant={variant}
@@ -267,10 +268,10 @@ const ButtonPage = () => {
                 isLoading={isLoadingObj[11]}
                 iconBefore={iconForButton2}
               />
-            </div>
+            </PatternBoxRow>
 
             {/* Danger + loading */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'danger') && undefined}
               <ButtonLoading
                 variant={variant}
@@ -293,7 +294,7 @@ const ButtonPage = () => {
                 isLoading={isLoadingObj[14]}
                 iconBefore={iconForButton2}
               />
-            </div>
+            </PatternBoxRow>
           </PatternBox>
         </PageSection>
 
@@ -302,7 +303,7 @@ const ButtonPage = () => {
 
           <PatternBox>
             {/* Primary + sizing default */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               <div>
                 {(variant = 'primary') && undefined}
                 <Button variant={variant} sizing="fat">
@@ -330,16 +331,16 @@ const ButtonPage = () => {
                   None button
                 </Button>
               </div>
-            </div>
+            </PatternBoxRow>
 
             {/* Primary + sizing default */}
-            <div className="flex gap-3">
+            <PatternBoxRow>
               {(variant = 'primary') && undefined}
               <Button variant={variant} sizing="default" className="w-full">
                 {getText('text-only', variant)} with full container width
               </Button>
-            </div>
-            <div className="flex gap-3">
+            </PatternBoxRow>
+            <PatternBoxRow>
               <Button
                 variant={variant}
                 sizing="default"
@@ -348,7 +349,7 @@ const ButtonPage = () => {
               >
                 {getText('with-icon', variant)}
               </Button>
-            </div>
+            </PatternBoxRow>
           </PatternBox>
         </PageSection>
       </div>

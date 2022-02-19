@@ -1,5 +1,6 @@
 import PageSection from 'src/components/atoms/PageSection'
 import PatternBox from 'src/components/atoms/PatternBox'
+import PatternBoxRow from 'src/components/atoms/PatternBoxRow'
 import SectionTitle from 'src/components/atoms/SectionTitle'
 import Button from 'src/components/molecules/Button'
 import toast from 'src/helpers/toast'
@@ -40,7 +41,7 @@ const ToastPage = () => {
           <SectionTitle>Simple Basic</SectionTitle>
 
           <PatternBox>
-            <div className="flex flex-col gap-3">
+            <PatternBoxRow>
               <div>
                 <Button variant="primary" onClick={() => handleToastBasic('success')}>
                   Success toast
@@ -70,7 +71,7 @@ const ToastPage = () => {
                   Error toast
                 </Button>
               </div>
-            </div>
+            </PatternBoxRow>
           </PatternBox>
         </PageSection>
 
@@ -78,7 +79,7 @@ const ToastPage = () => {
           <SectionTitle>With Confirmation</SectionTitle>
 
           <PatternBox>
-            <div className="flex flex-col gap-3">
+            <PatternBoxRow>
               <div>
                 <Button variant="primary" onClick={() => handleToastConfirmation('success', 'OK')}>
                   Success toast
@@ -117,7 +118,7 @@ const ToastPage = () => {
                   Error toast
                 </Button>
               </div>
-            </div>
+            </PatternBoxRow>
           </PatternBox>
         </PageSection>
 
@@ -125,7 +126,7 @@ const ToastPage = () => {
           <SectionTitle>With Yes or No (decide button)</SectionTitle>
 
           <PatternBox>
-            <div className="flex flex-col gap-3">
+            <PatternBoxRow>
               <div>
                 <Button
                   variant="subtle"
@@ -152,7 +153,7 @@ const ToastPage = () => {
                   Error toast
                 </Button>
               </div>
-            </div>
+            </PatternBoxRow>
           </PatternBox>
         </PageSection>
 
@@ -160,7 +161,7 @@ const ToastPage = () => {
           <SectionTitle>With Yes, No, and Cancel (decide with cancel button)</SectionTitle>
 
           <PatternBox>
-            <div className="flex flex-col gap-3">
+            <PatternBoxRow>
               <div>
                 <Button
                   variant="subtle"
@@ -187,7 +188,7 @@ const ToastPage = () => {
                   Error toast
                 </Button>
               </div>
-            </div>
+            </PatternBoxRow>
           </PatternBox>
         </PageSection>
       </div>
