@@ -19,7 +19,7 @@ const ButtonLoading: FC<Props> = ({
   const textRef = useRef<HTMLSpanElement>(null)
   const spinnerRef = useRef<SVGSVGElement>(null)
 
-  const [, spinnerStyleClassName] = buildButtonClassName(
+  const [, spinnerVariant] = buildButtonClassName(
     props.sizing ?? 'default',
     props.isDisabled ?? false,
     props.isSelected ?? false,
@@ -46,7 +46,20 @@ const ButtonLoading: FC<Props> = ({
         </span>
         <div className="absolute top-0 h-full w-full">
           <div className="flex h-full w-full items-center justify-center">
-            <Spinner ref={spinnerRef} className={spinnerClassName + ' ' + spinnerStyleClassName} />
+            <Spinner
+              ref={spinnerRef}
+              className={spinnerClassName}
+              size={
+                props.sizing === 'none'
+                  ? 'xs'
+                  : props.sizing === 'compact'
+                  ? 'sm'
+                  : props.sizing === 'fat'
+                  ? 'lg'
+                  : 'default'
+              }
+              variant={spinnerVariant}
+            />
           </div>
         </div>
       </div>

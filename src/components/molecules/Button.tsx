@@ -6,6 +6,7 @@ import {
   ReactChild,
   SVGProps,
 } from 'react'
+import { SpinnerVariant } from '../atoms/Spinner'
 
 export type ButtonVariant =
   | 'default'
@@ -73,55 +74,55 @@ const getStateConditionClassName = (isDisabled: boolean, isSelected: boolean): s
 /**
  * General button styling should appended last
  */
-const getVariantClassName = (variant: ButtonVariant): [string, string] => {
+const getVariantClassName = (variant: ButtonVariant): [string, SpinnerVariant] => {
   let className = ''
-  let spinnerClassName = ''
+  let spinnerVariant: SpinnerVariant = 'default'
 
   switch (variant) {
     case 'default':
-      spinnerClassName = 'text-gray-700'
+      spinnerVariant = 'default'
       className =
         'bg-gray-100/75 text-gray-700 hover:bg-gray-200 active:bg-blue-100 focus-visible:ring-blue-500 active:text-blue-700'
       break
 
     case 'primary':
-      spinnerClassName = 'text-white'
+      spinnerVariant = 'light'
       className =
         'bg-blue-700 text-white hover:bg-blue-600 active:bg-blue-800 focus-visible:ring-blue-400'
       break
 
     case 'subtle':
-      spinnerClassName = 'text-gray-700'
+      spinnerVariant = 'default'
       className =
         'text-gray-700 hover:bg-gray-200 active:bg-blue-100 focus-visible:ring-blue-500 active:text-blue-700'
       break
 
     case 'link':
-      spinnerClassName = 'text-blue-700'
+      spinnerVariant = 'primary'
       className =
         'text-blue-700 hover:text-blue-600 active:text-blue-900 focus-visible:ring-blue-500 hover:underline focus-visible:underline'
       break
 
     case 'subtle-link':
-      spinnerClassName = 'text-gray-500'
+      spinnerVariant = 'semidark'
       className =
         'text-gray-500 hover:text-gray-400 active:text-gray-700 focus-visible:ring-blue-500 hover:underline focus-visible:underline'
       break
 
     case 'warning':
-      spinnerClassName = 'text-white'
+      spinnerVariant = 'default'
       className =
         'bg-[#FFAB00] text-gray-800 hover:bg-amber-400 active:bg-orange-400 focus-visible:ring-orange-500'
       break
 
     case 'danger':
-      spinnerClassName = 'text-white'
+      spinnerVariant = 'light'
       className =
         'bg-red-600 text-white hover:bg-red-500 active:bg-red-700 focus-visible:ring-red-400'
       break
   }
 
-  return [className, spinnerClassName]
+  return [className, spinnerVariant]
 }
 
 export const buildButtonClassName = (
@@ -129,12 +130,10 @@ export const buildButtonClassName = (
   isDisabled: boolean,
   isSelected: boolean,
   variant: ButtonVariant,
-): [string, string] => {
-  let spinnerClassName = ''
+): [string, SpinnerVariant] => {
   const isState = isDisabled || isSelected
 
-  const [className, y] = getVariantClassName(variant)
-  spinnerClassName += y
+  const [className, spinnerVariant] = getVariantClassName(variant)
 
   return [
     [
@@ -142,7 +141,7 @@ export const buildButtonClassName = (
       getStateConditionClassName(isDisabled, isSelected),
       !isState && className,
     ].join(' '),
-    spinnerClassName,
+    spinnerVariant,
   ]
 }
 
