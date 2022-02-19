@@ -30,38 +30,37 @@ const BadgePage = () => {
             <PatternBoxRow>
               {(size = 'default') && undefined}
               <div>
-                <Badge
-                  size={size}
-                  shape="default"
-                  variant="default"
-                  id="first-badge"
-                  title="first badge"
-                >
+                <Badge size={size} variant="default" id="first-badge" title="First Badge">
                   Default badge
                 </Badge>
               </div>
               <div>
-                <Badge size={size} shape="default" variant="primary">
+                <Badge size={size} variant="primary">
                   Primary badge
                 </Badge>
               </div>
               <div>
-                <Badge size={size} shape="default" variant="primary-inverted">
+                <Badge size={size} variant="primary-inverted">
                   Primary-inverted badge
                 </Badge>
               </div>
               <div>
-                <Badge size={size} shape="default" variant="positive">
+                <Badge size={size} variant="positive">
                   Positive badge
                 </Badge>
               </div>
               <div>
-                <Badge size={size} shape="default" variant="negative">
+                <Badge size={size} variant="negative">
                   Negative badge
                 </Badge>
               </div>
               <div>
-                <Badge size={size} shape="default" variant="warning">
+                <Badge size={size} variant="important">
+                  Important badge
+                </Badge>
+              </div>
+              <div>
+                <Badge size={size} variant="warning">
                   Warning badge
                 </Badge>
               </div>
@@ -222,12 +221,26 @@ const BadgePage = () => {
             {(weight = 'default') && undefined}
             <PatternBoxRow>
               <div>
-                <Badge size={size} variant={variant} shape={shape} iconBefore={ClockIcon}>
+                <Badge
+                  size={size}
+                  variant={variant}
+                  shape={shape}
+                  iconBefore={ClockIcon}
+                  id="warning-badge-3"
+                  title="Warning Badge 3"
+                >
                   10 minutes left
                 </Badge>
               </div>
               <div>
-                <Badge size={size} variant={variant} shape={shape} iconAfter={ArrowNarrowRightIcon}>
+                <Badge
+                  size={size}
+                  variant={variant}
+                  shape={shape}
+                  iconAfter={ArrowNarrowRightIcon}
+                  id="warning-badge-3"
+                  title="Warning Badge 3"
+                >
                   10 minutes left
                 </Badge>
               </div>
@@ -238,6 +251,49 @@ const BadgePage = () => {
                   shape={shape}
                   iconBefore={ClockIcon}
                   iconAfter={ArrowNarrowRightIcon}
+                  id="warning-badge-3"
+                  title="Warning Badge 3"
+                >
+                  10 minutes left
+                </Badge>
+              </div>
+            </PatternBoxRow>
+
+            {(variant = 'important') && undefined}
+            <PatternBoxRow>
+              <div>
+                <Badge
+                  size={size}
+                  variant={variant}
+                  shape={shape}
+                  iconBefore={ClockIcon}
+                  id="important-badge-1"
+                  title="Important Badge 1"
+                >
+                  10 minutes left
+                </Badge>
+              </div>
+              <div>
+                <Badge
+                  size={size}
+                  variant={variant}
+                  shape={shape}
+                  iconAfter={ArrowNarrowRightIcon}
+                  id="important-badge-2"
+                  title="Important Badge 2"
+                >
+                  10 minutes left
+                </Badge>
+              </div>
+              <div>
+                <Badge
+                  size={size}
+                  variant={variant}
+                  shape={shape}
+                  iconBefore={ClockIcon}
+                  iconAfter={ArrowNarrowRightIcon}
+                  id="important-badge-3"
+                  title="Important Badge 3"
                 >
                   10 minutes left
                 </Badge>
