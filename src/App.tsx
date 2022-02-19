@@ -5,6 +5,7 @@ import FixedBoxLayout from './components/templates/FixedBoxLayout'
 import VerticalDashboardV1 from './components/templates/VerticalDashboardV1'
 import BadgePage from './pages/components/BadgePage'
 import ButtonPage from './pages/components/ButtonPage'
+import SpinnerPage from './pages/components/SpinnerPage'
 import ToastPage from './pages/components/ToastPage'
 
 const NotFound = () => {
@@ -56,7 +57,11 @@ const App = () => {
             <Route index element={<ItemContainer val="/components" />} />
             <Route path="badge" element={<BadgePage />} />
             <Route path="button" element={<ButtonPage />} />
+            <Route path="breadcrumb" element={<ItemContainer val="Breadcrumb Page" />} />
+            <Route path="progress-bar" element={<ItemContainer val="ProgressBar Page" />} />
+            <Route path="spinner" element={<SpinnerPage />} />
             <Route path="toast" element={<ToastPage />} />
+            <Route path="tooltip" element={<ItemContainer val="Tooltip Page" />} />
           </Route>
 
           <Route path="items" element={<ItemContainer val="/items" />}>
