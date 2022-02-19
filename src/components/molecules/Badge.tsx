@@ -9,6 +9,7 @@ export type BadgeVariant =
   | 'positive'
   | 'negative'
   | 'warning'
+  | 'important'
 export type BadgeWeight = 'default' | 'thin'
 type PickedBadgeAttrs = Pick<
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
@@ -92,6 +93,9 @@ const getVariantClassName = (variant: BadgeVariant): string => {
       break
     case 'warning':
       className = 'bg-amber-100 text-amber-700'
+      break
+    case 'important':
+      className = 'bg-red-600 text-white'
       break
     default:
       className = ''
