@@ -7,11 +7,13 @@ import { useEffect } from 'react'
  * @param override use title as prefix or as a full title instead
  */
 export const useTitle = (title: string, override: boolean = false): void => {
+  const fallback = '-'
+
   useEffect(() => {
-    document.title = override ? title : `${title} | ${process.env.REACT_APP_SITE_TITLE}`
+    document.title = override ? title : `${title} | ${process.env.REACT_APP_SITE_TITLE || fallback}`
 
     return () => {
-      document.title = override ? title : `${title} | ${process.env.REACT_APP_SITE_TITLE}`
+      document.title = `${process.env.REACT_APP_SITE_TITLE || fallback}`
     }
   }, [title, override])
 }
