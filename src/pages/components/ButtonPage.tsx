@@ -47,6 +47,9 @@ const ButtonPage = () => {
     18: false,
     19: false,
     20: false,
+
+    21: false,
+    22: false,
   })
 
   const handleClick = (key: number) =>
@@ -418,6 +421,89 @@ const ButtonPage = () => {
               >
                 {getText('with-icon', variant)}
               </Button>
+            </PatternBoxRow>
+          </PatternBox>
+        </PageSection>
+
+        <PageSection>
+          <SectionTitle>With testId</SectionTitle>
+
+          <PatternBox>
+            <PatternBoxRow>
+              <div>
+                <Button testId="only-btn-test-1">Only button</Button>
+              </div>
+            </PatternBoxRow>
+
+            <PatternBoxRow>
+              <div>
+                <Button testId="link-btn-test-1" variant="link" href="#link-btn-test-1">
+                  Link button
+                </Button>
+              </div>
+              <div>
+                <Button testId="link-btn-test-2" variant="subtle-link" href="#link-btn-test-2">
+                  Link button
+                </Button>
+              </div>
+            </PatternBoxRow>
+
+            <PatternBoxRow>
+              <div>
+                <ButtonLoading
+                  testId="link-btn-loading-state-test-1"
+                  variant="link"
+                  href="#link-btn-loading-state-test-1"
+                  isLoading={isLoadingObj[21]}
+                  onClick={() => handleClick(21)}
+                >
+                  Link button + loading state
+                </ButtonLoading>
+              </div>
+              <div>
+                <ButtonLoading
+                  testId="link-btn-loading-state-test-2"
+                  variant="subtle-link"
+                  href="#link-btn-loading-state-test-2"
+                  isLoading={isLoadingObj[21]}
+                  onClick={() => handleClick(21)}
+                >
+                  Link button + loading state
+                </ButtonLoading>
+              </div>
+            </PatternBoxRow>
+
+            <PatternBoxRow>
+              <div>
+                <ButtonLoading
+                  variant="warning"
+                  testId="btn-loading-state-test-1"
+                  isLoading={isLoadingObj[22]}
+                  onClick={() => handleClick(22)}
+                >
+                  Button + loading state
+                </ButtonLoading>
+              </div>
+              <div>
+                <ButtonLoading
+                  variant="primary"
+                  testId="btn-loading-state-test-2"
+                  isLoading={isLoadingObj[22]}
+                  onClick={() => handleClick(22)}
+                >
+                  Button + loading state
+                </ButtonLoading>
+              </div>
+              <div>
+                <ButtonLoading
+                  variant="danger"
+                  testId="btn-loading-state-test-3"
+                  isLoading={isLoadingObj[22]}
+                  onClick={() => handleClick(22)}
+                >
+                  Button + loading state
+                </ButtonLoading>
+              </div>
             </PatternBoxRow>
           </PatternBox>
         </PageSection>
