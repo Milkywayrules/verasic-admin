@@ -46,8 +46,8 @@ const getSizingClassName = (sizing: ButtonSizing): string => {
   let className = ''
 
   if (sizing === 'fat') className = 'h-11 px-6'
-  else if (sizing === 'wide') className = 'h-9 px-6'
-  else if (sizing === 'default') className = 'h-9 px-3'
+  else if (sizing === 'wide') className = 'h-8 px-6'
+  else if (sizing === 'default') className = 'h-8 px-3'
   else if (sizing === 'compact') className = 'h-6 px-3'
   else if (sizing === 'none') className = 'h-5 px-0'
 
