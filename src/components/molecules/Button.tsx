@@ -171,20 +171,16 @@ const Button: FC<ButtonProps> = forwardRef(
   ) => {
     const [buttonClassName] = buildButtonClassName(sizing, isDisabled, isSelected, variant)
 
-    const ButtonComp = (
+    // instead of immediately return this button component
+    // we separate this for deciding the "testId" and should be wrapped by "NavLink" or not
+    const ButtonComp = ({ testId }: Pick<ButtonProps, 'testId'>) => (
       <button
+        className={`flex rounded-[3px] font-medium outline-none focus-visible:ring-2 ${buttonClassName} ${className}`}
+        data-testid={testId}
         ref={ref}
         type={type}
-        className={
-          'flex rounded-[3px] font-medium outline-none focus-visible:ring-2' +
-          ' ' +
-          buttonClassName +
-          ' ' +
-          className
-        }
         style={style}
         disabled={isDisabled}
-        data-testid={testId}
         {...props}
       >
         <span className="mx-auto flex h-full w-full items-center justify-center gap-2">
@@ -196,11 +192,11 @@ const Button: FC<ButtonProps> = forwardRef(
     )
 
     return href ? (
-      <NavLink to={href} target={target}>
-        {ButtonComp}
+      <NavLink to={href} target={target} data-testid={testId}>
+        <ButtonComp testId={`button:${testId}`} />
       </NavLink>
     ) : (
-      ButtonComp
+      <ButtonComp testId={testId} />
     )
   },
 )
