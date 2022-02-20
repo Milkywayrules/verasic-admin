@@ -86,21 +86,25 @@ const ButtonPage = () => {
             {/* Link */}
             <PatternBoxRow>
               {(variant = 'link') && undefined}
-              <Button variant={variant}>{getText('text-only', variant)}</Button>
-              <Button variant={variant} iconBefore={iconForButton}>
+              <Button variant={variant} href="#1">
+                {getText('text-only', variant)}
+              </Button>
+              <Button variant={variant} href="#2" iconBefore={iconForButton}>
                 {getText('with-icon')}
               </Button>
-              <Button variant={variant} iconBefore={iconForButton} />
+              <Button variant={variant} href="#3" iconBefore={iconForButton} />
             </PatternBoxRow>
 
             {/* Subtle Link */}
             <PatternBoxRow>
               {(variant = 'subtle-link') && undefined}
-              <Button variant={variant}>{getText('text-only', variant)}</Button>
-              <Button variant={variant} iconBefore={iconForButton}>
+              <Button variant={variant} href="#4">
+                {getText('text-only', variant)}
+              </Button>
+              <Button variant={variant} href="#5" iconBefore={iconForButton}>
                 {getText('with-icon')}
               </Button>
-              <Button variant={variant} iconBefore={iconForButton} />
+              <Button variant={variant} href="#6" iconBefore={iconForButton} />
             </PatternBoxRow>
 
             {/* Primary */}
@@ -230,6 +234,7 @@ const ButtonPage = () => {
               {(variant = 'link') && undefined}
               <ButtonLoading
                 variant={variant}
+                href="#7"
                 onClick={() => handleClick(6)}
                 isLoading={isLoadingObj[6]}
               >
@@ -237,6 +242,7 @@ const ButtonPage = () => {
               </ButtonLoading>
               <ButtonLoading
                 variant={variant}
+                href="#8"
                 onClick={() => handleClick(7)}
                 isLoading={isLoadingObj[7]}
                 iconBefore={iconForButton2}
@@ -245,6 +251,7 @@ const ButtonPage = () => {
               </ButtonLoading>
               <ButtonLoading
                 variant={variant}
+                href="#9"
                 onClick={() => handleClick(8)}
                 isLoading={isLoadingObj[8]}
                 iconBefore={iconForButton2}
@@ -256,6 +263,7 @@ const ButtonPage = () => {
               {(variant = 'subtle-link') && undefined}
               <ButtonLoading
                 variant={variant}
+                href="#10"
                 onClick={() => handleClick(9)}
                 isLoading={isLoadingObj[9]}
               >
@@ -263,6 +271,7 @@ const ButtonPage = () => {
               </ButtonLoading>
               <ButtonLoading
                 variant={variant}
+                href="#11"
                 onClick={() => handleClick(10)}
                 isLoading={isLoadingObj[10]}
                 iconBefore={iconForButton2}
@@ -271,6 +280,7 @@ const ButtonPage = () => {
               </ButtonLoading>
               <ButtonLoading
                 variant={variant}
+                href="#12"
                 onClick={() => handleClick(11)}
                 isLoading={isLoadingObj[11]}
                 iconBefore={iconForButton2}
