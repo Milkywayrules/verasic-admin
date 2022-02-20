@@ -66,7 +66,7 @@ const App = () => {
             <Route path="card" element={<ItemContainer val="card Page" />} />
             <Route path="carousel" element={<ItemContainer val="carousel Page" />} />
             <Route path="dropdown" element={<ItemContainer val="dropdown Page" />} />
-            <Route path="form" element={<FormPage />} />
+            <Route path="form" element={<ItemContainer val="form Page" />} />
             <Route path="typography" element={<ItemContainer val="typography Page" />} />
             <Route path="modal" element={<ItemContainer val="modal Page" />} />
             <Route path="tab" element={<ItemContainer val="tab Page" />} />
