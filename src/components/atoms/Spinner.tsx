@@ -22,6 +22,7 @@ interface Props {
   className?: string
   size?: SpinnerSize
   variant?: SpinnerVariant
+  testId?: string
 }
 
 const getSizeClassName = (size: SpinnerSize): string => {
@@ -51,7 +52,7 @@ const getVariantClassName = (variant: SpinnerVariant): string => {
 
 const Spinner = forwardRef(
   (
-    { className = '', size = 'default', variant = 'default' }: Props,
+    { className = '', size = 'default', variant = 'default', testId }: Props,
     ref: ForwardedRef<SVGSVGElement>,
   ) => {
     const sizeClassName = getSizeClassName(size)
@@ -59,8 +60,9 @@ const Spinner = forwardRef(
 
     return (
       <svg
-        ref={ref}
         className={`flex animate-spin items-center justify-between py-0 ${className} ${sizeClassName} ${variantClassName}`}
+        data-testid={testId}
+        ref={ref}
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
