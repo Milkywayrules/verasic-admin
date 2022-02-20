@@ -44,11 +44,20 @@ const ButtonLoading: FC<Props> = ({
           {children}
           {typeof iconAfter === 'function' ? iconAfter({ className: 'h-6 w-6' }) : iconAfter}
         </span>
+
         <div className="absolute top-0 h-full w-full">
           <div className="flex h-full w-full items-center justify-center">
             <Spinner
-              ref={spinnerRef}
               className={spinnerClassName}
+              testId={
+                props.testId
+                  ? props.href
+                    ? `spinner:button:${props.testId}` // spinner must be inside a button that inside a NavLink
+                    : `spinner:${props.testId}` // spinner must only be inside a button
+                  : undefined
+              }
+              ref={spinnerRef}
+              variant={spinnerVariant}
               size={
                 props.sizing === 'none'
                   ? 'xs'
@@ -58,7 +67,6 @@ const ButtonLoading: FC<Props> = ({
                   ? 'lg'
                   : 'default'
               }
-              variant={spinnerVariant}
             />
           </div>
         </div>
