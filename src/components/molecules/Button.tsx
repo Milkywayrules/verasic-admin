@@ -3,9 +3,11 @@ import {
   DetailedHTMLProps,
   FC,
   forwardRef,
+  HTMLAttributeAnchorTarget,
   ReactChild,
   SVGProps,
 } from 'react'
+import { NavLink } from 'react-router-dom'
 import { SpinnerVariant } from '../atoms/Spinner'
 
 export type ButtonVariant =
@@ -28,6 +30,7 @@ export interface ButtonProps extends PickedButtonAttrs {
   isSelected?: boolean
 
   href?: string
+  target?: HTMLAttributeAnchorTarget
   iconBefore?: ReactChild | ((props: SVGProps<SVGSVGElement>) => JSX.Element)
   iconAfter?: ReactChild | ((props: SVGProps<SVGSVGElement>) => JSX.Element)
 
@@ -160,13 +163,15 @@ const Button: FC<ButtonProps> = forwardRef(
       style,
       iconBefore,
       iconAfter,
+      href,
+      target = '_self',
       ...props
     },
     ref,
   ) => {
     const [buttonClassName] = buildButtonClassName(sizing, isDisabled, isSelected, variant)
 
-    return (
+    const ButtonComp = (
       <button
         ref={ref}
         type={type}
@@ -179,6 +184,7 @@ const Button: FC<ButtonProps> = forwardRef(
         }
         style={style}
         disabled={isDisabled}
+        data-testid={testId}
         {...props}
       >
         <span className="mx-auto flex h-full w-full items-center justify-center gap-2">
@@ -187,6 +193,14 @@ const Button: FC<ButtonProps> = forwardRef(
           {typeof iconAfter === 'function' ? iconAfter({ className: 'h-6 w-6' }) : iconAfter}
         </span>
       </button>
+    )
+
+    return href ? (
+      <NavLink to={href} target={target}>
+        {ButtonComp}
+      </NavLink>
+    ) : (
+      ButtonComp
     )
   },
 )
