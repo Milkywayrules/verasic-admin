@@ -42,37 +42,117 @@ const MENU1: ExtendedSlimSidebarItemWithHeading = {
       content: <MenuContent icon={CollectionIcon} text="Components" />,
       childItems: [
         {
+          id: 10199,
+          to: '/components/text-field',
+          content: <MenuContent text="Text Field" />,
+        },
+        {
+          id: 101,
+          to: '/components/alert',
+          content: <MenuContent text="Alert" />,
+        },
+        {
           id: 102,
+          to: '/components/accordion',
+          content: <MenuContent text="Accordion" />,
+        },
+        {
+          id: 103,
           to: '/components/badge',
           content: <MenuContent text="Badge" />,
         },
         {
-          id: 101,
+          id: 104,
+          to: '/components/breadcrumb',
+          content: <MenuContent text="Breadcrumb" />,
+        },
+        {
+          id: 105,
           to: '/components/button',
           content: <MenuContent text="Button" />,
         },
         {
           id: 106,
-          to: '/components/breadcrumb',
-          content: <MenuContent text="Breadcrumb" />,
+          to: '/components/card',
+          content: <MenuContent text="Card" />,
         },
         {
-          id: 103,
+          id: 107,
+          to: '/components/carousel',
+          content: <MenuContent text="Carousel" />,
+        },
+        {
+          id: 108,
+          to: '/components/dropdown',
+          content: <MenuContent text="Dropdown" />,
+        },
+        {
+          id: 109,
+          to: '/components/form',
+          content: <MenuContent text="Form" />,
+        },
+        {
+          id: 110,
+          to: '/components/typography',
+          content: <MenuContent text="Typography" />,
+        },
+        {
+          id: 111,
+          to: '/components/modal',
+          content: <MenuContent text="Modal" />,
+        },
+        {
+          id: 112,
+          to: '/components/tab',
+          content: <MenuContent text="Tab" />,
+        },
+        {
+          id: 113,
+          to: '/components/navbar',
+          content: <MenuContent text="Navbar" />,
+        },
+        {
+          id: 114,
+          to: '/components/footer',
+          content: <MenuContent text="Footer" />,
+        },
+        {
+          id: 115,
+          to: '/components/sidebar',
+          content: <MenuContent text="Sidebar" />,
+        },
+        {
+          id: 116,
+          to: '/components/pagination',
+          content: <MenuContent text="Pagination" />,
+        },
+        {
+          id: 117,
+          to: '/components/timeline',
+          content: <MenuContent text="Timeline" />,
+        },
+        {
+          id: 118,
           to: '/components/progress-bar',
           content: <MenuContent text="Progress Bar" />,
         },
         {
-          id: 104,
+          id: 119,
+          to: '/components/table',
+          content: <MenuContent text="Table" />,
+        },
+        {
+          id: 120,
           to: '/components/spinner',
           content: <MenuContent text="Spinner" />,
         },
         {
-          id: 107,
+          id: 121,
           to: '/components/toast',
           content: <MenuContent text="Toast" />,
         },
         {
-          id: 105,
+          id: 122,
           to: '/components/tooltip',
           content: <MenuContent text="Tooltip" />,
         },

@@ -5,7 +5,9 @@ import FixedBoxLayout from './components/templates/FixedBoxLayout'
 import VerticalDashboardV1 from './components/templates/VerticalDashboardV1'
 import BadgePage from './pages/components/BadgePage'
 import ButtonPage from './pages/components/ButtonPage'
+import FormPage from './pages/components/FormPage'
 import SpinnerPage from './pages/components/SpinnerPage'
+import TextFieldPage from './pages/components/TextFieldPage'
 import ToastPage from './pages/components/ToastPage'
 
 const NotFound = () => {
@@ -55,10 +57,26 @@ const App = () => {
 
           <Route path="components" element={<FixedBoxLayout />}>
             <Route index element={<ItemContainer val="/components" />} />
+            <Route path="text-field" element={<TextFieldPage />} />
+            <Route path="alert" element={<ItemContainer val="alert Page" />} />
+            <Route path="accordion" element={<ItemContainer val="accordion Page" />} />
             <Route path="badge" element={<BadgePage />} />
-            <Route path="button" element={<ButtonPage />} />
             <Route path="breadcrumb" element={<ItemContainer val="Breadcrumb Page" />} />
+            <Route path="button" element={<ButtonPage />} />
+            <Route path="card" element={<ItemContainer val="card Page" />} />
+            <Route path="carousel" element={<ItemContainer val="carousel Page" />} />
+            <Route path="dropdown" element={<ItemContainer val="dropdown Page" />} />
+            <Route path="form" element={<FormPage />} />
+            <Route path="typography" element={<ItemContainer val="typography Page" />} />
+            <Route path="modal" element={<ItemContainer val="modal Page" />} />
+            <Route path="tab" element={<ItemContainer val="tab Page" />} />
+            <Route path="navbar" element={<ItemContainer val="navbar Page" />} />
+            <Route path="footer" element={<ItemContainer val="footer Page" />} />
+            <Route path="sidebar" element={<ItemContainer val="sidebar Page" />} />
+            <Route path="pagination" element={<ItemContainer val="pagination Page" />} />
+            <Route path="timeline" element={<ItemContainer val="timeline Page" />} />
             <Route path="progress-bar" element={<ItemContainer val="ProgressBar Page" />} />
+            <Route path="table" element={<ItemContainer val="table Page" />} />
             <Route path="spinner" element={<SpinnerPage />} />
             <Route path="toast" element={<ToastPage />} />
             <Route path="tooltip" element={<ItemContainer val="Tooltip Page" />} />
