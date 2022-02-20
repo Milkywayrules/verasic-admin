@@ -173,10 +173,10 @@ const Button: FC<ButtonProps> = forwardRef(
 
     // instead of immediately return this button component
     // we separate this for deciding the "testId" and should be wrapped by "NavLink" or not
-    const ButtonComp = ({ testId }: Pick<ButtonProps, 'testId'>) => (
+    const ButtonComp = (
       <button
         className={`flex rounded-[3px] font-medium outline-none focus-visible:ring-2 ${buttonClassName} ${className}`}
-        data-testid={testId}
+        data-testid={href ? `button:${testId}` : testId}
         ref={ref}
         type={type}
         style={style}
@@ -192,11 +192,11 @@ const Button: FC<ButtonProps> = forwardRef(
     )
 
     return href ? (
-      <NavLink to={href} target={target} data-testid={testId}>
-        <ButtonComp testId={`button:${testId}`} />
+      <NavLink to={href} target={target} data-testid={testId} tabIndex={-1}>
+        {ButtonComp}
       </NavLink>
     ) : (
-      <ButtonComp testId={testId} />
+      ButtonComp
     )
   },
 )
