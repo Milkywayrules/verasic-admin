@@ -58,20 +58,33 @@ const getSizingClassName = (sizing: ButtonSizing): string => {
  * Specific state button styling should appended after sizing
  * and should not apply any general variant
  */
-const getStateConditionClassName = (isDisabled: boolean, isSelected: boolean): string => {
+const getStateConditionClassName = (
+  isDisabled: boolean,
+  isSelected: boolean,
+  variant: ButtonVariant,
+): [string, SpinnerVariant] => {
   let className = ''
+  let spinnerVariant: SpinnerVariant = 'default'
 
   if (isDisabled) {
-    className = 'cursor-not-allowed bg-gray-100/75 text-gray-400'
-    return className
+    if (variant === 'primary') {
+      spinnerVariant = 'light'
+      className = 'cursor-not-allowed bg-blue-800 text-white'
+    } else {
+      spinnerVariant = 'default'
+      className = 'cursor-not-allowed bg-gray-100/75 text-gray-400'
+    }
+
+    return [className, spinnerVariant]
   }
 
   if (isSelected) {
+    spinnerVariant = 'light'
     className = 'bg-slate-700 text-slate-100 focus-visible:ring-blue-500'
-    return className
+    return [className, spinnerVariant]
   }
 
-  return className
+  return [className, spinnerVariant]
 }
 
 /**
@@ -136,15 +149,17 @@ export const buildButtonClassName = (
 ): [string, SpinnerVariant] => {
   const isState = isDisabled || isSelected
 
-  const [className, spinnerVariant] = getVariantClassName(variant)
+  const buttonSizingClass = getSizingClassName(sizing)
+  const [buttonVariantClass, spinnerVariantClass] = getVariantClassName(variant)
+  const [buttonStateClass, spinnerStateClass] = getStateConditionClassName(
+    isDisabled,
+    isSelected,
+    variant,
+  )
 
   return [
-    [
-      getSizingClassName(sizing),
-      getStateConditionClassName(isDisabled, isSelected),
-      !isState && className,
-    ].join(' '),
-    spinnerVariant,
+    [buttonSizingClass, buttonStateClass, !isState ? buttonVariantClass : ''].join(' '),
+    isState ? spinnerStateClass : spinnerVariantClass,
   ]
 }
 
